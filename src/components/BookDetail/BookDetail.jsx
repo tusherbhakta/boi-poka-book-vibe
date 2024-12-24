@@ -49,8 +49,8 @@ const BookDetail = () => {
                         </tr>
                     </table>
                     <div>
-                    <button className="btn btn-outline border-[#50B1C9]  py-4 px-7 mr-5 hover:bg-[#50B1C9]">Read</button>
-                    <button className="btn btn-outline border-[#50B1C9]  py-4 px-7 hover:bg-[#50B1C9]">Wishlist</button>
+                        <button className="btn btn-outline border-[#50B1C9]  py-4 px-7 mr-5 hover:bg-[#50B1C9]">Read</button>
+                        <button className="btn btn-outline border-[#50B1C9]  py-4 px-7 hover:bg-[#50B1C9]">Wishlist</button>
                     </div>
                 </div>
             </div>
