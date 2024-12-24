@@ -1,13 +1,16 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { addToStoredReadList } from '../../utility/addToDb';
 
 const BookDetail = () => {
     const { bookId } = useParams();
     const data = useLoaderData();
     const id = parseInt(bookId);
     const book = data.find(book => book.bookId === id);
-
-    const { bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
+    const handleMarkAsRead = (id) =>{
+        addToStoredReadList(id);
+    }
+    const {bookId: currentBookId, bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content w-full  flex-col lg:flex-row">
@@ -49,8 +52,8 @@ const BookDetail = () => {
                         </tr>
                     </table>
                     <div>
-                        <button className="btn btn-outline border-[#50B1C9]  py-4 px-7 mr-5 hover:bg-[#50B1C9]">Read</button>
-                        <button className="btn btn-outline border-[#50B1C9]  py-4 px-7 hover:bg-[#50B1C9]">Wishlist</button>
+                        <button onClick={()=> handleMarkAsRead(bookId)} className="btn btn-outline border-[#50B1C9]  py-4 px-7 mr-5 hover:bg-[#50B1C9]">Mark as Read</button>
+                        <button className="btn btn-outline border-[#50B1C9]  py-4 px-7 hover:bg-[#50B1C9]">Add to Wishlist</button>
                     </div>
                 </div>
             </div>
