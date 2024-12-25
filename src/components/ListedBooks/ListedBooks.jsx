@@ -10,15 +10,15 @@ const ListedBooks = () => {
             <div>
                 <Tabs>
                     <TabList>
-                        <Tab>Title 1</Tab>
-                        <Tab>Title 2</Tab>
+                        <Tab>Read List</Tab>
+                        <Tab>My Wishlist</Tab>
                     </TabList>
 
                     <TabPanel>
-                        <h2>Any content 1</h2>
+                        <h2 className='text-2xl font-bold'>The books I have already read:</h2>
                     </TabPanel>
                     <TabPanel>
-                        <h2>Any content 2</h2>
+                        <h2 className='text-2xl font-bold'>The books I am going to read:</h2>
                     </TabPanel>
                 </Tabs>
             </div>
