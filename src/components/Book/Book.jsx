@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Book = ({ book }) => {
-    const { bookId, bookName, author, image, tags, category } = book;
+    const { bookId, bookName, author, image, tags, category,rating,totalPages } = book;
     return (
         <div className="card bg-base-100 w-96 p-6 rounded-2xl border border-solid border-[#13131326] shadow-xl">
             <Link to={`/books/${bookId}`}>
@@ -27,9 +27,9 @@ const Book = ({ book }) => {
             <div className='flex justify-between mt-5'>
                 <p>{category}</p>
                 <div className="rating">
-                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultChecked />
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultChecked/>
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                     <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                 </div>
