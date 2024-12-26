@@ -17,6 +17,7 @@
     "react-router-dom": "^7.1.0",
     "react-tabs": "^6.1.0",
     "react-toastify": "^11.0.2",
+    "recharts": "^2.15.0",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {
