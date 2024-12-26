@@ -1,4 +1,5 @@
 import { stringify } from "postcss";
+import { toast } from "react-toastify";
 
 const getStoredWishlist = () =>{
     const storedListStr = localStorage.getItem('wishlist');
@@ -21,6 +22,7 @@ const addToWishlist = (id) =>{
         storedList.push(id);
         const storedListStr = JSON.stringify(storedList);
         localStorage.setItem('wishlist',storedListStr);
+        toast('You add this book to your wishlist');
     }
 }
 export{addToWishlist, getStoredWishlist };
