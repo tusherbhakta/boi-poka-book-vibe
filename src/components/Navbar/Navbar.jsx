@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const links = <>
-    <li><NavLink to={'/'}>Home</NavLink> </li>
-    <li><NavLink to={'/listedBooks'}>Listed Books</NavLink></li>
-    <li><NavLink to={'dashboard'}>Dashboard</NavLink></li>
+    <li><NavLink to={'/'} className='text-[#23BE0A] hover:border hover:border-[#23BE0A] hover:text-[#23BE0A]'>Home</NavLink> </li>
+    <li><NavLink to={'/listedBooks'} className='text-[#23BE0A] hover:border hover:border-[#23BE0A] hover:text-[#23BE0A]'>Listed Books</NavLink></li>
+    <li><NavLink to={'dashboard'} className='text-[#23BE0A] hover:border hover:border-[#23BE0A] hover:text-[#23BE0A]'>Dashboard</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100">
@@ -27,7 +27,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content  rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         {links}
                     </ul>
                 </div>
