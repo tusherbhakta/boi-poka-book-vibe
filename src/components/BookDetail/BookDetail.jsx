@@ -18,12 +18,12 @@ const BookDetail = () => {
     return (
         <div className="hero bg-base-200 min-h-screen">
             <div className="hero-content w-full  flex-col lg:flex-row">
-                <div className='w-1/2 p-[74px] rounded-2xl bg-[#1313130a]'>
+                <div className='lg:w-1/2 p-5 lg:p-[74px] rounded-2xl bg-[#1313130a]'>
                     <img
                         src={image}
                         className="w-full  rounded-lg shadow-2xl" />
                 </div>
-                <div className='ml-12 w-1/2 '>
+                <div className='mx-2 lg:ml-12 lg:w-1/2 '>
                     <h1 className="text-[40px] font-bold">{bookName}</h1>
                     <p className="mt-4 text-xl font-medium">By: {author}</p>
                     <div className='my-6 py-4 text-xl font-medium text-[#131313CC] border-solid-[#13131326] border-y-2'>
@@ -55,9 +55,9 @@ const BookDetail = () => {
                             <td td className='font-semibold'>{rating}</td>
                         </tr>
                     </table>
-                    <div>
-                        <button onClick={()=> handleMarkAsRead(bookId)} className="btn btn-outline border-[#50B1C9]  py-4 px-7 mr-5 hover:bg-[#50B1C9]">Mark as Read</button>
-                        <button onClick={() => handleAddToWishlist(bookId)} className="btn btn-outline border-[#50B1C9]  py-4 px-7 hover:bg-[#50B1C9]">Add to Wishlist</button>
+                    <div className=''>
+                        <button onClick={()=> handleMarkAsRead(bookId)} className="btn btn-outline border-[#50B1C9]  py-4 px-7 mr-5 mb-4 hover:bg-[#50B1C9]">Mark as Read</button>
+                        <button onClick={() => handleAddToWishlist(bookId)} className="btn btn-outline border-[#50B1C9]  py-4 px-7 mb-4 hover:bg-[#50B1C9]">Add to Wishlist</button>
                     </div>
                 </div>
             </div>
