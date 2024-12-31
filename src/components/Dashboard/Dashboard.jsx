@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 import { getStoredReadList } from '../../utility/addToDb';
 
 const Dashboard = () => {
@@ -44,28 +44,28 @@ const Dashboard = () => {
 
     return (
         <div>
-            <h2 className="text-4xl">This is Dhisum dhisum dashboard</h2>
-            <div>
-                <BarChart
-                    width={900}
-                    height={600}
-                    data={markAsReadData} // Pass the filtered data
-                    margin={{
-                        top: 20,
-                        right: 30,
-                        left: 20,
-                        bottom: 5,
-                    }}
-                >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="bookName" /> {/* Correct dataKey for X-axis */}
-                    <YAxis />
-                    <Bar dataKey="bookPage" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-                        {markAsReadData.map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
-                        ))}
-                    </Bar>
-                </BarChart>
+            <div style={{ width: '100%', height: '600px' }}>
+                {/* ResponsiveContainer automatically adjusts to the parent container */}
+                <ResponsiveContainer>
+                    <BarChart
+                        data={markAsReadData} // Pass the filtered data
+                        margin={{
+                            top: 20,
+                            right: 30,
+                            left: 20,
+                            bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="bookName" /> {/* Correct dataKey for X-axis */}
+                        <YAxis />
+                        <Bar dataKey="bookPage" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                            {markAsReadData.map((entry, index) => (
+                                <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+                            ))}
+                        </Bar>
+                    </BarChart>
+                </ResponsiveContainer>
             </div>
         </div>
     );
